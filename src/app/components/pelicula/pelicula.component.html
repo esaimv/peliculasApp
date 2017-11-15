@@ -1,0 +1,21 @@
+<div class="row animated fadeIn" *ngIf="pelicula">
+  <div class="col-md-12">
+    <h1>{{ pelicula.original_title }}</h1>
+  </div>
+  <div class="col-md-4">
+    <img src="https://image.tmdb.org/t/p/w500/{{ pelicula.poster_path }}" class="img-thumbnail">
+  </div>
+  <div class="col-md-8">
+      <h4>Synopsis</h4>
+      <p>{{ pelicula.overview }}</p>
+      <h5>Famous phrase</h5>
+      <p>{{ pelicula.tagline }}</p>
+      <br>
+      <h5>Popularity <span class="badge badge-primary">{{ pelicula.popularity | nodecimal }}/100</span></h5>
+      <h5>Vote average <span class="badge badge-primary">{{ pelicula.vote_average }}</span></h5>
+      <hr>
+      <div class="text-right">
+        <button type="button" class="btn btn-danger puntero" (click)="regresar()">Back</button>
+      </div>
+  </div>
+</div>

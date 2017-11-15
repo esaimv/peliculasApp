@@ -1,0 +1,29 @@
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="input-group">
+      <input
+        (keyup.enter)="buscar()"
+        [(ngModel)]="texto"
+        type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-success" type="button" (click)="buscar()">Go!</button>
+      </span>
+    </div>
+  </div>
+</div>
+<br><br>
+<h3>Results</h3>
+<hr>
+<div class="alert alert-warning" role="alert" *ngIf="cargando">
+  loading
+</div>
+<div class="card-columns" *ngIf="!cargando">
+  <div *ngFor="let r of resultados" class="card puntero" (click)="movie(r.id)">
+    <img class="card-img-top" src="{{ r | img}} " alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">{{r.original_title}}</h4>
+      <p class="card-text">{{r.overview | description}}</p>
+    </div>
+  </div>
+</div>

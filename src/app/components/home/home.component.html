@@ -1,0 +1,197 @@
+<h1>Popular</h1>
+<hr>
+
+<div class="alert alert-warning" role="alert" *ngIf="band">
+  Loading...
+</div>
+<div class="populares animated fadeIn" *ngIf="!band">
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div
+          (click)="movie(populares[0].id)"
+          class="col-md-12 div-pic-1 puntero" [ngStyle]="{'background-image': 'url( ' + (populares[0] | img) + ' )'}">
+          <h5 class="pic-titulo"> {{ populares[0].original_title }}</h5>
+        </div>
+      </div>
+
+      <div class="row">
+        <div
+          (click)="movie(populares[2].id)"
+          class="col-md-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url(  ' + (populares[2] | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ populares[2].original_title }}</h5>
+        </div>
+        <div
+          (click)="movie(populares[3].id)"
+          class="col-md-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url(  ' + (populares[3] | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ populares[3].original_title }}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div
+          (click)="movie(populares[4].id)"
+          class="col-md-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url(  ' + (populares[4] | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ populares[4].original_title }}</h5>
+        </div>
+        <div
+          (click)="movie(populares[5].id)"
+          class="col-md-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url(  ' + (populares[5] | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ populares[5].original_title }}</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          (click)="movie(populares[1].id)"
+          class="col-md-12 div-pic-1 puntero" [ngStyle]="{'background-image': 'url(  ' + (populares[1] | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ populares[1].original_title }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="card-group">
+      <div class="card" style="width: 20rem;" *ngFor="let p of populares2">
+        <div
+          (click)="movie(p.id)"
+          class="div-pic-2 puntero card-img-top" [ngStyle]="{'background-image': 'url(  ' + (p | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ p.original_title }}</h5>
+        </div>
+        <!-- <img class="card-img-top" src="{{ p | img }}" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">{{p.original_title}}</p>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+
+<h1>Released this year</h1>
+<hr>
+
+
+<div class="alert alert-warning" role="alert" *ngIf="bandn">
+  Loading...
+</div>
+<div class="nuevas animated fadeIn" *ngIf="!bandn">
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div
+          (click)="movie(nuevas[2].id)"
+          class="col-md-12 div-pic-1 puntero" [ngStyle]="{'background-image': 'url( ' + (nuevas[2] | img) + ' )'}">
+          <h5 class="pic-titulo"> {{ nuevas[2].original_title }}</h5>
+        </div>
+      </div>
+
+      <div class="row">
+        <div
+          (click)="movie(nuevas[1].id)"
+          class="col-md-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url(  ' + (nuevas[1] | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ nuevas[1].original_title }}</h5>
+        </div>
+        <div
+          (click)="movie(nuevas[0].id)"
+          class="col-md-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url(  ' + (nuevas[0] | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ nuevas[0].original_title }}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div
+          (click)="movie(nuevas[3].id)"
+          class="col-md-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url(  ' + (nuevas[3] | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ nuevas[3].original_title }}</h5>
+        </div>
+        <div
+          (click)="movie(nuevas[4].id)"
+          class="col-md-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url(  ' + (nuevas[4] | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ nuevas[4].original_title }}</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          (click)="movie(nuevas[5].id)"
+          class="col-md-12 div-pic-1 puntero" [ngStyle]="{'background-image': 'url(  ' + (nuevas[5] | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ nuevas[5].original_title }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="card-group">
+      <div class="card" style="width: 20rem;" *ngFor="let p of nuevas2">
+        <div class="div-pic-2 puntero card-img-top" [ngStyle]="{'background-image': 'url(  ' + (p | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ p.original_title }}</h5>
+        </div>
+        <!-- <img class="card-img-top" src="{{ p | img }}" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">{{p.original_title}}</p>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<h1>Kids movies</h1>
+<hr>
+
+
+<div class="alert alert-warning" role="alert" *ngIf="bandk">
+  Loading...
+</div>
+<div class="kids animated fadeIn" *ngIf="!bandk">
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div
+          (click)="movie(kids[0].id)"
+          class="col-md-12 div-pic-1 puntero" [ngStyle]="{'background-image': 'url( ' + (kids[0] | img) + ' )'}">
+          <h5 class="pic-titulo"> {{ kids[0].original_title }}</h5>
+        </div>
+      </div>
+
+      <div class="row">
+        <div
+          (click)="movie(kids[1].id)"
+          class="col-md-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url(  ' + (kids[1] | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ kids[1].original_title }}</h5>
+        </div>
+        <div
+          (click)="movie(kids[2].id)"
+          class="col-md-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url(  ' + (kids[2] | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ kids[2].original_title }}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div
+          (click)="movie(kids[3].id)"
+          class="col-md-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url(  ' + (kids[3] | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ kids[3].original_title }}</h5>
+        </div>
+        <div
+          (click)="movie(kids[4].id)"
+          class="col-md-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url(  ' + (kids[4] | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ kids[4].original_title }}</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          (click)="movie(kids[5].id)"
+          class="col-md-12 div-pic-1 puntero" [ngStyle]="{'background-image': 'url(  ' + (kids[5] | img) + '  )'}">
+          <h5 class="pic-titulo"> {{ kids[5].original_title }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
